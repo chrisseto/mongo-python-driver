@@ -11,6 +11,11 @@ try:
 except ImportError:
     pass
 
+if sys.version_info[0] == 3:
+    'foo'.encode('idna')
+else:
+    u'foo'.encode('idna')
+
 # Don't force people to install setuptools unless
 # we have to.
 try:
